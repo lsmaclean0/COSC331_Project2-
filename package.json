@@ -1,0 +1,29 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "REST API for COSC 331",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec npx babel-node -- ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsmaclean0/COSC331_Project2-.git"
+  },
+  "author": "Luke MacLean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lsmaclean0/COSC331_Project2-/issues"
+  },
+  "homepage": "https://github.com/lsmaclean0/COSC331_Project2-/blob/master/README.md",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
+    "nodemon": "^1.17.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
