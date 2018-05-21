@@ -1,21 +1,24 @@
-const routes = (app) => {
-    //Contact route (whole collection or posting to db)
-    app.route('/contact')
-    .get((req,res) => {
-        res.send('GET request was sucessfull')
-    })
-    .post((req,res) => {
-        res.send('POST request was sucessfull')
-    });
+import {
+  addNewContact,
+  getContacts,
+  getSpecificContact,
+  updateContact,
+  deleteContact
+} from "../controllers/controller";
 
-    //specific id's in database
-    app.route('/contact/:contactId')
-    .put((req,res) => {
-        res.send('PUT request was successfull')
-    })
-    .delete((req,res) => {
-        res.send('DELETE request was sucessfull')
-    });
-}
+const routes = app => {
+  //Contact route (whole collection or posting to db)
+  app
+    .route("/contact")
+    .get(getContacts)
+    .post(addNewContact);
+
+  //specific id's in database
+  app
+    .route("/contact/:contactId")
+    .get(getSpecificContact)
+    .put(updateContact)
+    .delete(deleteContact);
+};
 
 export default routes;
