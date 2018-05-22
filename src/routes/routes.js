@@ -9,13 +9,13 @@ import {
 const routes = app => {
   //Contact route (whole collection or posting to db)
   app
-    .route("/contact")
+    .route("/contacts")
     .get(getContacts)
     .post(addNewContact);
 
   //specific id's in database
   app
-    .route("/contact/:contactId")
+    .route("/contacts/:contactId")
     .get(getSpecificContact)
     .put(updateContact)
     .delete(deleteContact);

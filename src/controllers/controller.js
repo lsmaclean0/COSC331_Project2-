@@ -6,7 +6,6 @@ const Contact = mongoose.model("Contact", ContactSchema);
 //adds new contact
 export const addNewContact = (req, res) => {
   let newContact = new Contact(req.body);
-
   newContact.save((err, contact) => {
     if (err) {
       res.send(err);
@@ -19,29 +18,28 @@ export const addNewContact = (req, res) => {
 export const getContacts = (req, res) => {
   Contact.find({}, (err, contact) => {
     if (err) {
-      res.send(err);
+      res.send(err); 
     }
     res.json(contact);
+
   });
 };
 
 //gets a contact by _id
 export const getSpecificContact = (req, res) => {
-  Contact.findById(req.params.contactId, (err, contact) => {
+  Contact.find({_id: req.params.id}/*req.params.Contactid*/ ,(err, contact) => {
     if (err) {
       res.send(err);
     }
     res.json(contact);
+    
   });
+  console.log(res.name);
 };
 
 //update a contact in the database
 export const updateContact = (req, res) => {
-  Contact.findOneAndUpdate(
-    { _id: req.params.contactId },
-    req.body,
-    { new: true },
-    (err, contact) => {
+  Contact.findOneAndUpdate({ _id: req.params.id }, req.body, /*{ new: true },*/ (err, contact) => {
       if (err) {
         res.send(err);
       }
@@ -52,7 +50,7 @@ export const updateContact = (req, res) => {
 
 //delete a contact from the database
 export const deleteContact = (req, res) => {
-  Contact.remove({ _id: req.params.contactId }, (err, contact) => {
+  Contact.remove({ _id: req.params.id }, (err, contact) => {
     if (err) {
       res.send(err);
     }
