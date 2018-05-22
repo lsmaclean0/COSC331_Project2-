@@ -8,5 +8,5 @@ Look under Folder P2, you should see folders
     * src: contains the same source files from the rest api from class
     * server.js: this was my attempt at creating an express app for the back end 
     
-Other attemps are in separate folders 
+Other attempts will be in appropriately named branches
     
