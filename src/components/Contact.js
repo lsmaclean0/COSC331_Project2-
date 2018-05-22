@@ -7,6 +7,7 @@ function Contact(props) {
     return (
         <div className="contact">
           <span>{props.name}</span>         
+          <span>{props.username}</span> 
         </div>
       );
 }
